@@ -5,6 +5,7 @@ import ResultCard from "./components/ResultCard";
 import Spinner from "./components/Spinner";
 import ErrorMessage from "./components/ErrorMessage";
 import { queryNL, fetchExamples } from "./api";
+import PartyMode from "./components/PartyMode";
 
 export default function App() {
   const [examples, setExamples] = useState([]);
@@ -50,6 +51,7 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen">
+      <PartyMode />
       <Sidebar
         examples={examples}
         history={history}
