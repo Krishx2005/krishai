@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-pitch: #0d6b38;
+  --color-pitch-dark: #0a5a2e;
+  --color-pitch-deeper: #074d26;
+  --color-sidebar: #0b1a0f;
+  --color-sidebar-light: #122216;
+  --color-sidebar-border: #1a3320;
+  --color-field: #f0f7f2;
+  --color-field-line: #d4e8da;
+  --color-accent: #2ecc71;
+  --color-accent-dim: #27ae60;
+  --color-gold: #f1c40f;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-field);
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle hexagon pattern on main area */
+.pitch-bg {
+  background-color: var(--color-field);
+  background-image:
+    radial-gradient(circle, #c8dece 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a5a3a;
+  border-radius: 3px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
