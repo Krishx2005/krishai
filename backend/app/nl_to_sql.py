@@ -54,7 +54,8 @@ Rules:
 - Only use tables and columns from the schema above.
 - When asked about a player's "position", use the player_positions table.
 - value_eur, wage_eur, and release_clause_eur are in euros (integers).
-- When querying player_stats columns (pace, shooting, passing, dribbling, defending, physic), always filter out NULLs for the stat columns used (e.g., WHERE ps.pace IS NOT NULL). Goalkeepers often have NULL outfield stats."""
+- When querying player_stats columns (pace, shooting, passing, dribbling, defending, physic), always filter out NULLs for the stat columns used (e.g., WHERE ps.pace IS NOT NULL). Goalkeepers often have NULL outfield stats.
+- Player names use abbreviated first names (e.g., "K. Mbappé", "J. Bellingham", "M. Salah", not "Kylian Mbappé"). When searching for a specific player, use ILIKE with the last name only: WHERE p.name ILIKE '%Bellingham%'. Never match on the full first name."""
 
 
 _cached_schema: Optional[str] = None
